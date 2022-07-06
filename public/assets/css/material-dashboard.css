@@ -21583,7 +21583,20 @@ fieldset:disabled .btn {
 body.dark-version {
   color: rgba(255, 255, 255, 0.8) !important;
 }
-
+@media print {
+  .navbar-main{
+    display: none!important;
+  }
+  .card-header{
+    display: none!important;
+  }
+  .btn{
+    display: none!important;
+  }
+  .nav-item{
+    display: none!important;
+  }
+}
 @media (min-width: 992px) {
 
   .dropdown .dropdown-menu,

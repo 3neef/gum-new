@@ -38,7 +38,7 @@ class SalesController extends Controller
 
         $customers = Customer::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $phones = Phone::pluck('name', 'id');
+        $phones = Phone::pluck('serial', 'id');
 
         return view('admin.sales.create', compact('customers', 'phones'));
     }
@@ -60,7 +60,7 @@ class SalesController extends Controller
 
         $customers = Customer::pluck('name', 'id')->prepend(trans('global.pleaseSelect'), '');
 
-        $phones = Phone::pluck('name', 'id');
+        $phones = Phone::pluck('serial', 'id');
 
         $sale->load('customer', 'phones');
 
