@@ -4,6 +4,10 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+ @font-face {
+   font-family: "cairo";
+   src: url("../fonts/Cairo.ttf");
+ }
 :root {
   --bs-blue: #63B3ED;
   --bs-indigo: #596CFF;
@@ -68,7 +72,7 @@
   --bs-border-radius-xl: 0.75rem;
   --bs-border-radius-2xl: 1rem;
   --bs-border-radius-pill: 50rem;
-  --bs-heading-color: #344767;
+  --bs-heading-color: #000000;
   --bs-link-color: #e91e63;
   --bs-link-hover-color: #e91e63;
   --bs-code-color: #d63384;
@@ -79,6 +83,10 @@
 *::before,
 *::after {
   box-sizing: border-box;
+}
+div,h1,h2,h3,h4,h5,h6,p{
+  font-family: "cairo";
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -3661,10 +3669,10 @@ fieldset:disabled .btn {
 
 .btn-primary {
   --bs-btn-color: #000;
-  --bs-btn-bg: #e91e63;
+  --bs-btn-bg: #0004ff;
   --bs-btn-border-color: #e91e63;
   --bs-btn-hover-color: #000;
-  --bs-btn-hover-bg: #ec407a;
+  --bs-btn-hover-bg: #0e3f46;
   --bs-btn-hover-border-color: #eb3573;
   --bs-btn-focus-shadow-rgb: 198, 26, 84;
   --bs-btn-active-color: #000;
@@ -3672,7 +3680,7 @@ fieldset:disabled .btn {
   --bs-btn-active-border-color: #eb3573;
   --bs-btn-active-shadow: none;
   --bs-btn-disabled-color: #000;
-  --bs-btn-disabled-bg: #e91e63;
+  --bs-btn-disabled-bg: #8ef1ac;
   --bs-btn-disabled-border-color: #e91e63;
 }
 
@@ -3712,7 +3720,7 @@ fieldset:disabled .btn {
 
 .btn-info {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #1A73E8;
+  --bs-btn-bg: #00FE2C;
   --bs-btn-border-color: #1A73E8;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #1662c5;
@@ -3746,7 +3754,7 @@ fieldset:disabled .btn {
 
 .btn-danger {
   --bs-btn-color: #000;
-  --bs-btn-bg: #F44335;
+  --bs-btn-bg: #880808;
   --bs-btn-border-color: #F44335;
   --bs-btn-hover-color: #000;
   --bs-btn-hover-bg: #f65f53;
@@ -27646,5 +27654,18 @@ pre[class*="language-"] {
     overflow: auto !important;
   }
 }
-
+.navbar-vertical.navbar-expand-xs .navbar-collapse{
+  height: fit-content;
+  max-height: 75%;
+}
+.badge-info{
+  color: #7b809a !important;
+}
+.navbar-vertical .navbar-nav .nav-link>i{
+  margin: 0px 10px;
+}
+.fa-sign-out:before{
+  margin-left: 10px;
+}
+.btn-primary --bs-btn-bg
 /*# sourceMappingURL=dashboard-free.css.map */

@@ -23,9 +23,7 @@
                               </div>
                             </div>
                             <hr class="dark horizontal my-0">
-                            <div class="card-footer p-3">
-                              <p class="mb-0 text-start"><span class="text-success text-sm font-weight-bolder ms-1">+55% </span>من الأسبوع الماضي</p>
-                            </div>
+                           
                           </div>
                         </div>
                         <div class="col-lg-4 col-sm-6 mb-lg-0 mb-4">
@@ -41,9 +39,7 @@
                               </div>
                             </div>
                             <hr class="dark horizontal my-0">
-                            <div class="card-footer p-3">
-                              <p class="mb-0 text-start"><span class="text-success text-sm font-weight-bolder ms-1">+33% </span>من الأسبوع الماضي</p>
-                            </div>
+                           
                           </div>
                         </div>
                         <div class="col-lg-4 col-sm-6 mb-lg-0 mb-4">
@@ -56,15 +52,12 @@
                               <div class="text-start pt-1">
                                 <p class="text-sm mb-0 text-capitalize">عدد الزبائن والعملاء</p>
                                 <h4 class="mb-0">
-                                  <span class="text-danger text-sm font-weight-bolder ms-1">-2%</span>
                                   {{$custmers->count()}}
                                 </h4>
                               </div>
                             </div>
                             <hr class="dark horizontal my-0">
-                            <div class="card-footer p-3">
-                              <p class="mb-0 text-start"><span class="text-success text-sm font-weight-bolder ms-1">+5% </span>من الشهر الماضي</p>
-                            </div>
+                            
                           </div>
                         </div>
                         <div class="col-lg-4 col-sm-6 mt-4">
@@ -80,9 +73,7 @@
                               </div>
                             </div>
                             <hr class="dark horizontal my-0">
-                            <div class="card-footer p-3">
-                              <p class="mb-0 text-start"><span class="text-success text-sm font-weight-bolder ms-1">+7% </span>مقارنة بيوم أمس</p>
-                            </div>
+                            
                           </div>
                         </div>
                         <div class="col-lg-4 col-sm-6 mb-lg-0 mt-4">
@@ -99,9 +90,7 @@
                               </div>
                             </div>
                             <hr class="dark horizontal my-0">
-                            <div class="card-footer p-3">
-                              <p class="mb-0 text-start"><span class="text-success text-sm font-weight-bolder ms-1">+55% </span>من الأسبوع الماضي</p>
-                            </div>
+                          
                           </div>
                         </div>
                         <div class="col-lg-4 col-sm-6 mb-lg-0 mt-4">
@@ -117,9 +106,7 @@
                               </div>
                             </div>
                             <hr class="dark horizontal my-0">
-                            <div class="card-footer p-3">
-                              <p class="mb-0 text-start"><span class="text-success text-sm font-weight-bolder ms-1">+33% </span>من الأسبوع الماضي</p>
-                            </div>
+                            
                           </div>
                         </div>
                       </div>
@@ -131,7 +118,7 @@
 </div>
 
 <div class="row my-4">
-  <div class="col-lg-8 col-md-6 mb-md-0 mb-4">
+  <div class="col-lg-12 col-md-6 mb-md-0 mb-4">
     <div class="card">
       <div class="card-header pb-0">
         <div class="row mb-3">
@@ -142,7 +129,7 @@
               <span class="font-weight-bold ms-1">أخر المبيعات</span> هذا الشهر
             </p>
           </div>
-          <div class="col-6 my-auto text-start">
+          {{-- <div class="col-6 my-auto text-start">
             <div class="dropdown float-start ps-4">
               <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa fa-ellipsis-v text-secondary"></i>
@@ -153,7 +140,7 @@
                 <li><a class="dropdown-item border-radius-md" href="javascript:;">شيء آخر هنا</a></li>
               </ul>
             </div>
-          </div>
+          </div> --}}
         </div>
       </div>
       <div class="card-body p-0 pb-2">
