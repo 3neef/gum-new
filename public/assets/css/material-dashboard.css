@@ -27667,5 +27667,9 @@ pre[class*="language-"] {
 .fa-sign-out:before{
   margin-left: 10px;
 }
-.btn-primary --bs-btn-bg
+.page-link.active, .active>.page-link{
+  color: white;
+  background-color: #75201a;
+  border-color: #75201a;
+}
 /*# sourceMappingURL=dashboard-free.css.map */
