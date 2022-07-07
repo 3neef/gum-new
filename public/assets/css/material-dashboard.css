@@ -27672,4 +27672,38 @@ pre[class*="language-"] {
   background-color: #75201a;
   border-color: #75201a;
 }
+.invoice-logo{
+  display: none;
+}
+
+.social-links{
+  display: none;
+}
+.whatsapp{
+  display: none;
+}
+
+@media print {
+  .invoice-logo{
+    display:  flex;
+    justify-content:center;
+    align-items:center;
+  }
+  .social-links{
+    display:  flex;
+    justify-content:left;
+    align-items: center;
+  }
+  .social-links>i{
+    margin: 0px 5px;
+  }
+  .whatsapp{
+    display:  flex;
+    justify-content:right;
+    align-items: center;
+  }
+  .whatsapp>i{
+    margin: 0px 5px;
+  }
+  }  
 /*# sourceMappingURL=dashboard-free.css.map */
