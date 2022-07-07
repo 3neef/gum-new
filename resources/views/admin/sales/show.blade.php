@@ -37,7 +37,7 @@
                         </th>
                         <td>
                             @foreach($sale->phones as $key => $phone)
-                                <span class="label label-info">({{ $phone->name}} *** {{ $phone->serial }})</span>
+                                <span class="label label-info">{{ $phone->name }}</span>
                             @endforeach
                         </td>
                     </tr>

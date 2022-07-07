@@ -35,7 +35,16 @@
                             {{ trans('cruds.phone.fields.state') }}
                         </th>
                         <th>
+                            {{ trans('cruds.phone.fields.color') }}
+                        </th>
+                        <th>
                             {{ trans('cruds.phone.fields.battery') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.phone.fields.space') }}
+                        </th>
+                        <th>
+                            {{ trans('cruds.phone.fields.ram') }}
                         </th>
                         <th>
                             {{ trans('cruds.phone.fields.images') }}
@@ -79,6 +88,15 @@
                             <input class="search" type="text" placeholder="{{ trans('global.search') }}">
                         </td>
                         <td>
+                            <input class="search" type="text" placeholder="{{ trans('global.search') }}">
+                        </td>
+                        <td>
+                            <input class="search" type="text" placeholder="{{ trans('global.search') }}">
+                        </td>
+                        <td>
+                            <input class="search" type="text" placeholder="{{ trans('global.search') }}">
+                        </td>
+                        <td>
                         </td>
                         <td>
                             <input class="search" type="text" placeholder="{{ trans('global.search') }}">
@@ -109,7 +127,16 @@
                                 {{ App\Models\Phone::STATE_RADIO[$phone->state] ?? '' }}
                             </td>
                             <td>
+                                {{ $phone->color ?? '' }}
+                            </td>
+                            <td>
                                 {{ $phone->battery ?? '' }}
+                            </td>
+                            <td>
+                                {{ $phone->space ?? '' }}
+                            </td>
+                            <td>
+                                {{ $phone->ram ?? '' }}
                             </td>
                             <td>
                                 @foreach($phone->images as $key => $media)

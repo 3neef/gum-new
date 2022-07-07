@@ -49,10 +49,10 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.phone.fields.notes') }}
+                            {{ trans('cruds.phone.fields.color') }}
                         </th>
                         <td>
-                            {!! $phone->notes !!}
+                            {{ $phone->color }}
                         </td>
                     </tr>
                     <tr>
@@ -65,6 +65,22 @@
                     </tr>
                     <tr>
                         <th>
+                            {{ trans('cruds.phone.fields.space') }}
+                        </th>
+                        <td>
+                            {{ $phone->space }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.phone.fields.ram') }}
+                        </th>
+                        <td>
+                            {{ $phone->ram }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
                             {{ trans('cruds.phone.fields.images') }}
                         </th>
                         <td>
@@ -73,6 +89,14 @@
                                     <img src="{{ $media->getUrl('thumb') }}">
                                 </a>
                             @endforeach
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            {{ trans('cruds.phone.fields.notes') }}
+                        </th>
+                        <td>
+                            {!! $phone->notes !!}
                         </td>
                     </tr>
                     <tr>

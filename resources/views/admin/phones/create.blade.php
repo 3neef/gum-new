@@ -49,14 +49,14 @@
                 <span class="help-block">{{ trans('cruds.phone.fields.state_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="notes">{{ trans('cruds.phone.fields.notes') }}</label>
-                <textarea class="form-control ckeditor {{ $errors->has('notes') ? 'is-invalid' : '' }}" name="notes" id="notes">{!! old('notes') !!}</textarea>
-                @if($errors->has('notes'))
+                <label for="color">{{ trans('cruds.phone.fields.color') }}</label>
+                <input class="form-control {{ $errors->has('color') ? 'is-invalid' : '' }}" type="text" name="color" id="color" value="{{ old('color', '') }}">
+                @if($errors->has('color'))
                     <div class="invalid-feedback">
-                        {{ $errors->first('notes') }}
+                        {{ $errors->first('color') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.phone.fields.notes_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.phone.fields.color_helper') }}</span>
             </div>
             <div class="form-group">
                 <label for="battery">{{ trans('cruds.phone.fields.battery') }}</label>
@@ -69,6 +69,26 @@
                 <span class="help-block">{{ trans('cruds.phone.fields.battery_helper') }}</span>
             </div>
             <div class="form-group">
+                <label for="space">{{ trans('cruds.phone.fields.space') }}</label>
+                <input class="form-control {{ $errors->has('space') ? 'is-invalid' : '' }}" type="number" name="space" id="space" value="{{ old('space', '') }}" step="1">
+                @if($errors->has('space'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('space') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.phone.fields.space_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label for="ram">{{ trans('cruds.phone.fields.ram') }}</label>
+                <input class="form-control {{ $errors->has('ram') ? 'is-invalid' : '' }}" type="text" name="ram" id="ram" value="{{ old('ram', '') }}">
+                @if($errors->has('ram'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('ram') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.phone.fields.ram_helper') }}</span>
+            </div>
+            <div class="form-group">
                 <label for="images">{{ trans('cruds.phone.fields.images') }}</label>
                 <div class="needsclick dropzone {{ $errors->has('images') ? 'is-invalid' : '' }}" id="images-dropzone">
                 </div>
@@ -78,6 +98,16 @@
                     </div>
                 @endif
                 <span class="help-block">{{ trans('cruds.phone.fields.images_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label for="notes">{{ trans('cruds.phone.fields.notes') }}</label>
+                <textarea class="form-control ckeditor {{ $errors->has('notes') ? 'is-invalid' : '' }}" name="notes" id="notes">{!! old('notes') !!}</textarea>
+                @if($errors->has('notes'))
+                    <div class="invalid-feedback">
+                        {{ $errors->first('notes') }}
+                    </div>
+                @endif
+                <span class="help-block">{{ trans('cruds.phone.fields.notes_helper') }}</span>
             </div>
             <div class="form-group">
                 <label for="price">{{ trans('cruds.phone.fields.price') }}</label>
@@ -113,6 +143,67 @@
 @endsection
 
 @section('scripts')
+<script>
+    var uploadedImagesMap = {}
+Dropzone.options.imagesDropzone = {
+    url: '{{ route('admin.phones.storeMedia') }}',
+    maxFilesize: 50, // MB
+    acceptedFiles: '.jpeg,.jpg,.png,.gif',
+    addRemoveLinks: true,
+    headers: {
+      'X-CSRF-TOKEN': "{{ csrf_token() }}"
+    },
+    params: {
+      size: 50,
+      width: 4096,
+      height: 4096
+    },
+    success: function (file, response) {
+      $('form').append('<input type="hidden" name="images[]" value="' + response.name + '">')
+      uploadedImagesMap[file.name] = response.name
+    },
+    removedfile: function (file) {
+      console.log(file)
+      file.previewElement.remove()
+      var name = ''
+      if (typeof file.file_name !== 'undefined') {
+        name = file.file_name
+      } else {
+        name = uploadedImagesMap[file.name]
+      }
+      $('form').find('input[name="images[]"][value="' + name + '"]').remove()
+    },
+    init: function () {
+@if(isset($phone) && $phone->images)
+      var files = {!! json_encode($phone->images) !!}
+          for (var i in files) {
+          var file = files[i]
+          this.options.addedfile.call(this, file)
+          this.options.thumbnail.call(this, file, file.preview ?? file.preview_url)
+          file.previewElement.classList.add('dz-complete')
+          $('form').append('<input type="hidden" name="images[]" value="' + file.file_name + '">')
+        }
+@endif
+    },
+     error: function (file, response) {
+         if ($.type(response) === 'string') {
+             var message = response //dropzone sends it's own error messages in string
+         } else {
+             var message = response.errors.file
+         }
+         file.previewElement.classList.add('dz-error')
+         _ref = file.previewElement.querySelectorAll('[data-dz-errormessage]')
+         _results = []
+         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+             node = _ref[_i]
+             _results.push(node.textContent = message)
+         }
+
+         return _results
+     }
+}
+
+</script>
 <script>
     $(document).ready(function () {
   function SimpleUploadAdapter(editor) {
@@ -177,64 +268,4 @@
 });
 </script>
 
-<script>
-    var uploadedImagesMap = {}
-Dropzone.options.imagesDropzone = {
-    url: '{{ route('admin.phones.storeMedia') }}',
-    maxFilesize: 50, // MB
-    acceptedFiles: '.jpeg,.jpg,.png,.gif',
-    addRemoveLinks: true,
-    headers: {
-      'X-CSRF-TOKEN': "{{ csrf_token() }}"
-    },
-    params: {
-      size: 50,
-      width: 4096,
-      height: 4096
-    },
-    success: function (file, response) {
-      $('form').append('<input type="hidden" name="images[]" value="' + response.name + '">')
-      uploadedImagesMap[file.name] = response.name
-    },
-    removedfile: function (file) {
-      console.log(file)
-      file.previewElement.remove()
-      var name = ''
-      if (typeof file.file_name !== 'undefined') {
-        name = file.file_name
-      } else {
-        name = uploadedImagesMap[file.name]
-      }
-      $('form').find('input[name="images[]"][value="' + name + '"]').remove()
-    },
-    init: function () {
-@if(isset($phone) && $phone->images)
-      var files = {!! json_encode($phone->images) !!}
-          for (var i in files) {
-          var file = files[i]
-          this.options.addedfile.call(this, file)
-          this.options.thumbnail.call(this, file, file.preview)
-          file.previewElement.classList.add('dz-complete')
-          $('form').append('<input type="hidden" name="images[]" value="' + file.file_name + '">')
-        }
-@endif
-    },
-     error: function (file, response) {
-         if ($.type(response) === 'string') {
-             var message = response //dropzone sends it's own error messages in string
-         } else {
-             var message = response.errors.file
-         }
-         file.previewElement.classList.add('dz-error')
-         _ref = file.previewElement.querySelectorAll('[data-dz-errormessage]')
-         _results = []
-         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-             node = _ref[_i]
-             _results.push(node.textContent = message)
-         }
-
-         return _results
-     }
-}
-</script>
 @endsection
