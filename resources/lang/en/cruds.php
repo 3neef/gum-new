@@ -147,6 +147,12 @@ return [
             'updated_at_helper' => ' ',
             'deleted_at'        => 'Deleted at',
             'deleted_at_helper' => ' ',
+            'space'             => 'المساحة التخزينية',
+            'space_helper'      => ' ',
+            'ram'               => 'الرامات',
+            'ram_helper'        => ' ',
+            'color'             => 'اللون',
+            'color_helper'      => ' ',
         ],
     ],
     'sale' => [
