@@ -28,11 +28,25 @@ class StorePhoneRequest extends FormRequest
             'state' => [
                 'required',
             ],
+            'color' => [
+                'string',
+                'nullable',
+            ],
             'battery' => [
                 'nullable',
                 'integer',
                 'min:-2147483648',
                 'max:2147483647',
+            ],
+            'space' => [
+                'nullable',
+                'integer',
+                'min:-2147483648',
+                'max:2147483647',
+            ],
+            'ram' => [
+                'string',
+                'nullable',
             ],
             'images' => [
                 'array',
