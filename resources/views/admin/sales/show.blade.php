@@ -13,6 +13,10 @@
                     {{ trans('global.back_to_list') }}
                 </a>
             </div>
+            <div class="invoice-logo">
+                <img src="/images/gum-logo.png" class="w-30 h-30" alt="main_logo">
+                
+            </div>
             <table class="table table-bordered table-striped">
                 <tbody>
                     <tr>
@@ -71,6 +75,21 @@
                 <a class="btn btn-default" href="{{ route('admin.sales.index') }}">
                     {{ trans('global.back_to_list') }}
                 </a>
+            </div>
+            <div>
+                <div  class="social-links">
+                    
+                    <span>Gum21th/</span>
+                    <i class="fa fa-twitter me-sm-1"></i>
+                    <i class="fa fa-telegram me-sm-1"></i>
+                    <i class="fab fa-tiktok me-sm-1"></i>
+                    <i class="fa fa-instagram me-sm-1"></i>
+                    <i class="fa fa-heart me-sm-1"></i>
+                </div>
+                <div class="whatsapp">
+                    <span>0112196778</span>
+                    <i class="fa fa-whatsapp me-sm-1"></i>
+                </div>
             </div>
         </div>
     </div>

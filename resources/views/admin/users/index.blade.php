@@ -16,6 +16,10 @@
 
     <div class="card-body">
         <div class="table-responsive">
+            <div class="invoice-logo">
+                <img src="/images/gum-logo.png" class="w-30 h-30" alt="main_logo">
+                
+            </div>
             <table class=" table table-bordered table-striped table-hover datatable datatable-User">
                 <thead>
                     <tr>
