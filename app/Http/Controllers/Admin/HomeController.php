@@ -24,7 +24,8 @@ class HomeController
         $customers = Customer::get();
 
         $phones = Phone::get();
-        // dd ($sells);
-        return view('home', compact(['phones','custmers','sales','sells','buys','customers','new_phones','used_phones','swaps']));
+        $p_d = Swap::all()->sum('price_diffrance');
+        // dd ($maz);
+        return view('home', compact(['p_d','phones','custmers','sales','sells','buys','customers','new_phones','used_phones','swaps']));
     }
 }

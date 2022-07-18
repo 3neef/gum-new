@@ -27684,6 +27684,12 @@ pre[class*="language-"] {
 }
 
 @media print {
+  div.dataTables_wrapper div.dataTables_paginate ul.pagination{
+    display: none;
+  }
+  div.dataTables_wrapper div.dataTables_info{
+    display: none;
+  }
   .invoice-logo{
     display:  flex;
     justify-content:center;

@@ -109,6 +109,39 @@
                             
                           </div>
                         </div>
+                        <div class="col-lg-4 col-sm-6 mb-lg-0 mt-4">
+                          <div class="card">
+                            <div class="card-header p-3 pt-2">
+                              <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
+                                <i class="material-icons opacity-10">mobile_friendly
+
+                                </i>
+                              </div>
+                              <div class="text-start pt-1">
+                                <p class="text-sm mb-0 text-capitalize">اجمالي المقايضات</p>
+                                <h4 class="mb-0">{{ $p_d }} جنيه</h4>
+                              </div>
+                            </div>
+                            <hr class="dark horizontal my-0">
+                          
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 mb-lg-0 mt-4">
+                          <div class="card">
+                            <div class="card-header p-3 pt-2">
+                              <div class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
+                                <i class="material-icons opacity-10">install_mobile
+                                </i>
+                              </div>
+                              <div class="text-start pt-1">
+                                <p class="text-sm mb-0 text-capitalize">الهواتف المستعلة</p>
+                                <h4 class="mb-0">{{$used_phones->count()}}</h4>
+                              </div>
+                            </div>
+                            <hr class="dark horizontal my-0">
+                            
+                          </div>
+                        </div>
                       </div>
 
                 {{-- kljk --}}
@@ -118,7 +151,7 @@
 </div>
 
 <div class="row my-4">
-  <div class="col-lg-12 col-md-6 mb-md-0 mb-4">
+  <div class="col-lg-12 col-md-12 mb-md-0 mb-4">
     <div class="card">
       <div class="card-header pb-0">
         <div class="row mb-3">
