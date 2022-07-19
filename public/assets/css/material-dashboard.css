@@ -3737,7 +3737,7 @@ fieldset:disabled .btn {
 
 .btn-warning {
   --bs-btn-color: #000;
-  --bs-btn-bg: #fb8c00;
+  --bs-btn-bg: #088886;
   --bs-btn-border-color: #fb8c00;
   --bs-btn-hover-color: #000;
   --bs-btn-hover-bg: #fc9d26;
@@ -22484,7 +22484,8 @@ label,
 }
 
 .form-control {
-  border: none;
+  border-color: #000000;
+  
 }
 
 .form-control.is-invalid {
@@ -27677,7 +27678,7 @@ pre[class*="language-"] {
 }
 
 .social-links{
-  display: none;
+  visibility: hidden;
 }
 .whatsapp{
   display: none;
@@ -27699,6 +27700,7 @@ pre[class*="language-"] {
     display:  flex;
     justify-content:left;
     align-items: center;
+    visibility: visible;
   }
   .social-links>i{
     margin: 0px 5px;

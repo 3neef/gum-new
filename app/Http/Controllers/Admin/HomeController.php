@@ -25,7 +25,11 @@ class HomeController
 
         $phones = Phone::get();
         $p_d = Swap::all()->sum('price_diffrance');
-        // dd ($maz);
-        return view('home', compact(['p_d','phones','custmers','sales','sells','buys','customers','new_phones','used_phones','swaps']));
+        $revenu = Sale::all()->sum('total_price');
+        $total_sr = Sale::where('operation', 'sell')->get()->sum('total_price');
+        $total_br = Sale::where('operation', 'buy')->get()->sum('total_price');
+        $total_rr = Sale::where('operation', 'repair')->get()->sum('total_price');
+        // dd ($revenu);
+        return view('home', compact(['total_rr','total_br','total_sr','revenu','p_d','phones','custmers','sales','sells','buys','customers','new_phones','used_phones','swaps']));
     }
 }

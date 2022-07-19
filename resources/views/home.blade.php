@@ -112,8 +112,56 @@
                         <div class="col-lg-4 col-sm-6 mb-lg-0 mt-4">
                           <div class="card">
                             <div class="card-header p-3 pt-2">
+                              <div class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
+                                <i class="material-icons opacity-10">price_change
+                                </i>
+                              </div>
+                              <div class="text-start pt-1">
+                                <p class="text-sm mb-0 text-capitalize">إجمالي مبيعات الهواتف</p>
+                                <h4 class="mb-0">{{$total_sr}} جنيه</h4>
+                              </div>
+                            </div>
+                            <hr class="dark horizontal my-0">
+                            
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 mb-lg-0 mt-4">
+                          <div class="card">
+                            <div class="card-header p-3 pt-2">
+                              <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
+                                <i class="material-icons opacity-10">price_check
+                                </i>
+                              </div>
+                              <div class="text-start pt-1">
+                                <p class="text-sm mb-0 text-capitalize">إجمالي مشتريات الهواتف</p>
+                                <h4 class="mb-0">{{$total_br}} جنيه</h4>
+                              </div>
+                            </div>
+                            <hr class="dark horizontal my-0">
+                            
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-sm-6 mb-lg-0 mt-4">
+                          <div class="card">
+                            <div class="card-header p-3 pt-2">
+                              <div class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
+                                <i class="material-icons opacity-10">handyman
+                                </i>
+                              </div>
+                              <div class="text-start pt-1">
+                                <p class="text-sm mb-0 text-capitalize">إجمالي الصيانة</p>
+                                <h4 class="mb-0">{{$total_rr}} جنيه</h4>
+                              </div>
+                            </div>
+                            <hr class="dark horizontal my-0">
+                            
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 mb-lg-0 mt-4">
+                          <div class="card">
+                            <div class="card-header p-3 pt-2">
                               <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
-                                <i class="material-icons opacity-10">mobile_friendly
+                                <i class="material-icons opacity-10">currency_exchange
 
                                 </i>
                               </div>
@@ -126,16 +174,16 @@
                           
                           </div>
                         </div>
-                        <div class="col-lg-4 col-sm-6 mb-lg-0 mt-4">
+                        <div class="col-lg-6 col-sm-6 mb-lg-0 mt-4">
                           <div class="card">
                             <div class="card-header p-3 pt-2">
                               <div class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
-                                <i class="material-icons opacity-10">install_mobile
+                                <i class="material-icons opacity-10">attach_money
                                 </i>
                               </div>
                               <div class="text-start pt-1">
-                                <p class="text-sm mb-0 text-capitalize">الهواتف المستعلة</p>
-                                <h4 class="mb-0">{{$used_phones->count()}}</h4>
+                                <p class="text-sm mb-0 text-capitalize">إجمالي المعاملات</p>
+                                <h4 class="mb-0">{{$revenu}} جنيه</h4>
                               </div>
                             </div>
                             <hr class="dark horizontal my-0">
